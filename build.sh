@@ -27,8 +27,8 @@ source $_SCRIPTDIR/common-files/termux_download.sh
 : ${_TMP_DIR:=$_SCRIPTDIR/tmp}
 : ${_API_LEVEL:=21}
 : ${_MAKE_PROCESSES:=$(nproc)}
-: ${GCC_VERSION:=15.1.0}
-: ${GCC_SHA256:=51b9919ea69c980d7a381db95d4be27edf73b21254eb13d752a08003b4d013b1}
+: ${GCC_VERSION:=15.2.0}
+: ${GCC_SHA256:=7294d65cc1a0558cb815af0ca8c7763d86f7a31199794ede3f630c0d1b0a5723}
 : ${BINUTILS_VERSION:=2.44}
 : ${BINUTILS_SHA256:=0cdd76777a0dfd3dd3a63f215f030208ddb91c2361d2bcc02acec0f1c16b6a2e}
 
@@ -63,11 +63,11 @@ sudo apt install -y libgmp-dev libmpfr-dev libmpc-dev zlib1g-dev libisl-dev
 pushd $_TMP_DIR
 
 # Download source
-GCC_SRC_URL=https://ftp.gnu.org/gnu/gcc/gcc-${GCC_VERSION}/gcc-${GCC_VERSION}.tar.gz
+GCC_SRC_URL=https://mirror.kernel.org/gnu/gcc/gcc-${GCC_VERSION}/gcc-${GCC_VERSION}.tar.gz
 GCC_SRC_FILE=$_CACHE_DIR/gcc-${GCC_VERSION}.tar.gz
 GCC_SRC_DIR=$_TMP_DIR/gcc-${GCC_VERSION}
 termux_download $GCC_SRC_URL $GCC_SRC_FILE $GCC_SHA256
-BINUTILS_SRC_URL=https://ftp.gnu.org/gnu/binutils/binutils-${BINUTILS_VERSION}.tar.gz
+BINUTILS_SRC_URL=https://mirror.kernel.org/gnu/binutils/binutils-${BINUTILS_VERSION}.tar.gz
 BINUTILS_SRC_FILE=$_CACHE_DIR/binutils-${BINUTILS_VERSION}.tar.gz
 BINUTILS_SRC_DIR=$_TMP_DIR/binutils-${BINUTILS_VERSION}
 termux_download $BINUTILS_SRC_URL $BINUTILS_SRC_FILE $BINUTILS_SHA256
